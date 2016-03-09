@@ -1,3 +1,4 @@
 <h1><%= @painting.title %></h1>
 <p><%= @painting.body %></p>
-<%= link_to "<< Back to Paintings List", paintings_path %>
+<%= link_to "<< Back to Paintings List", paintings_path %> |
+<%= link_to "delete", painting_path(@painting), data: { confirm: "You sure?" }, method: :delete %>
