@@ -1,0 +1,18 @@
+<% provide(:title, 'Paintings') %>
+<h1>Paintings</h1>
+
+<ul class="users">
+  <% @paintings.each do |painting| %>
+    <li>
+      <%= link_to painting.title, painting_path(painting), class: 'painting_title', 
+      id: "painting_#{painting.id}" %> | 
+      <i><%= painting.body %></i>
+
+    </li>
+  <% end %>
+</ul>
+
+<hr />
+<p>
+<%= link_to "Create a New Painting", new_painting_path, class: "new_painting" %>
+</p>
