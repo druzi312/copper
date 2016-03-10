@@ -10,7 +10,8 @@
   </p>
 
   <% if @painting.image.exists? %>
-      <%= image_tag @painting.image.url %><br/>
+
+      <%= image_tag @painting.image.url(:thumb) %><br/>
   <% end %>
 
   <p>
