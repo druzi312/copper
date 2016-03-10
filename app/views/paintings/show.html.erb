@@ -1,12 +1,13 @@
 <h1><%= @painting.title %></h1>
 
-<p><%= image_tag @painting.image.url(:medium) %></p>
+<p><%= image_tag @painting.image.url(:large) %></p>
 <p><%= @painting.body %></p>
 <p>
   Tags:
   <% @painting.tags.each do |tag| %>
     <%= link_to tag.name, tag_path(tag) %>
-  <% end %>
+  <% end %> |
+  <i>Order <%= @painting.ordering %></i>
 </p>
 
 <%= link_to "<< Back to Paintings List", paintings_path %> |

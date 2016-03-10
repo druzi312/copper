@@ -5,8 +5,10 @@ class PaintingsController < ApplicationController
 	before_action :admin_user,     only: [ :edit, :update, :destroy, :new ]
 
 	def index
-		#@paintingsSort = @paintings.sort_by{|k,ordering| ordering}
-		@paintings = Painting.all
+		#@paintings = @paintings.sort_by{|k,ordering| ordering}
+		# @projects = Project.all.sort_by &:created_at
+		@paintings = Painting.all.sort_by &:ordering
+
 		#.sort_by{:ordering}
 		#@users = User.paginate(:page => params[:page], :per_page => 5)
 	end
@@ -59,6 +61,11 @@ class PaintingsController < ApplicationController
     # Confirms an admin user.
     def admin_user
       redirect_to(root_url) unless current_user.admin?
-    end    
+    end   
+
+	def ordering_values
+		Product.column_names.include?(params[:sort]) ? params[:sort] : "name"
+	end
+
 
 end  

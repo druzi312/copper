@@ -4,7 +4,11 @@
 <ul class="paintings">
   <% @paintings.each do |painting| %>
     <li>
-      <img src="<%= painting.image.url(:medium) %>">
+      
+      <a href="<%= painting_path(painting) %>">
+        <img src="<%= painting.image.url(:medium) %>">
+      </a>
+      
       <br />
       <%= link_to painting.title, painting_path(painting), 
       class: 'painting_title', 
@@ -16,7 +20,7 @@
   <% end %>
 </ul>
 
-<hr />
+<hr style="clear: both;"/>
 <p>
 <%= link_to "Create a New Painting", new_painting_path, class: "new_painting" %>
 
