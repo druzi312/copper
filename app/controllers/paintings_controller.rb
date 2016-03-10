@@ -5,7 +5,9 @@ class PaintingsController < ApplicationController
 	before_action :admin_user,     only: [ :edit, :update, :destroy, :new ]
 
 	def index
+		#@paintingsSort = @paintings.sort_by{|k,ordering| ordering}
 		@paintings = Painting.all
+		#.sort_by{:ordering}
 		#@users = User.paginate(:page => params[:page], :per_page => 5)
 	end
 

@@ -3,6 +3,7 @@ class CreatePaintings < ActiveRecord::Migration
     create_table :paintings do |t|
     	t.string :title
     	t.text :body
+    	
 
       	t.timestamps
     end
