@@ -2,6 +2,13 @@
 
 <p><%= image_tag @painting.image.url(:medium) %></p>
 <p><%= @painting.body %></p>
+<p>
+  Tags:
+  <% @painting.tags.each do |tag| %>
+    <%= link_to tag.name, tag_path(tag) %>
+  <% end %>
+</p>
+
 <%= link_to "<< Back to Paintings List", paintings_path %> |
 <%= link_to "edit", edit_painting_path(@painting) %> |
 <%= link_to "delete", painting_path(@painting), data: { confirm: "You sure?" }, method: :delete %>

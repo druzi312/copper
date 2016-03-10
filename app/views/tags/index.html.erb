@@ -1,0 +1,14 @@
+<% provide(:title, 'Tags') %>
+<h1>All Tags</h1>
+
+<ul id="tags">
+  <% @tags.each do |tag| %>
+    <li>
+    	<p><%= link_to tag.name, tag_path(tag) %></p>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "<< Back to Painting List", paintings_path %> | 
+
+<a href="#">Delete All - Needs Help</a>
