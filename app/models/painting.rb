@@ -6,6 +6,8 @@ class Painting < ActiveRecord::Base
 	has_many :taggings
 	has_many :tags, through: :taggings
 
+	scope :non_painting_featured, -> { where(painting_featured: false) }
+
 	def tag_list
 	  self.tags.collect do |tag|
 	    tag.name

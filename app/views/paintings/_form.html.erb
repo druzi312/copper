@@ -29,11 +29,15 @@
     <%= f.text_field :ordering %>
   </p>
 
+  <p>
+    <%= f.label :painting_featured %>
+    <%= f.check_box :painting_featured %>
+  </p>
 
-
-
+  <p>
+    <%= f.label :painting_type %><br />
     <%= f.select :painting_type, [['Painting','Painting'],['Commissions','Commissions']] %>
-
+  </p>
 
   <p>
     <%= f.label :body %><br />

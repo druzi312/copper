@@ -7,9 +7,15 @@
   <% @painting.tags.each do |tag| %>
     <%= link_to tag.name, tag_path(tag) %>
   <% end %> |
-  <i>Order <%= @painting.ordering %></i> | <%= @painting.painting_type %>
+  <i>Order:</i> <%= @painting.ordering %> | 
+  <i>Type:</i> <%= @painting.painting_type %> | 
+  <i>Featured:</i> <%= @painting.painting_featured %>
+
 </p>
 
 <%= link_to "<< Back to Paintings List", paintings_path %> |
 <%= link_to "edit", edit_painting_path(@painting) %> |
 <%= link_to "delete", painting_path(@painting), data: { confirm: "You sure?" }, method: :delete %>
+
+
+

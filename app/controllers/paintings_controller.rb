@@ -8,12 +8,33 @@ class PaintingsController < ApplicationController
 		#@paintings = @paintings.sort_by{|k,ordering| ordering}
 		# @projects = Project.all.sort_by &:created_at
 
+		#@users = User.paginate(:page => params[:page], :per_page => 5)
+
 		#@paintings = Painting.where.not("painting_type = ?", [""].to_yaml)
 
-		@paintings = Painting.where.not("painting_type = ?", ["paintings"].to_yaml).sort_by &:ordering
+		#if params[:painting_featured] == true
+	
+    	#params[:painting_featured] == "true"
 
-		#@users = User.paginate(:page => params[:page], :per_page => 5)
+    	#@paintings_feature = Painting.find(params[:id])
+    	#@paintings = @painting.painting_featured
+
+		#scope :painting_featured, where(:painting_featured => true)
+		#scope :non_featured, -> { where(painting_featured: false) }
+    	
+    #@accomplished_goals = painting.painting_featured
+    #@unaccomplished_goals = painting.non_painting_featured
+
+    	@paintings = Painting.all.where(painting_featured: false).sort_by &:ordering 
+
+
+	#scope :non_painting_featured, -> { where(painting_featured: false) }	
+	
+    #@paintings = painting.painting_featured
+    #@unaccomplished_paint = painting.non_painting_featured
+
 	end
+  	
 
 	def show
 		@painting = Painting.find(params[:id])
@@ -65,9 +86,7 @@ class PaintingsController < ApplicationController
       redirect_to(root_url) unless current_user.admin?
     end   
 
-	def ordering_values
-		Product.column_names.include?(params[:sort]) ? params[:sort] : "name"
-	end
+
 
 
 end  
