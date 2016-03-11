@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160310223155) do
+ActiveRecord::Schema.define(version: 20160310235157) do
 
   create_table "paintings", force: :cascade do |t|
     t.string   "title"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20160310223155) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "ordering"
+    t.string   "painting_type"
   end
 
   create_table "taggings", force: :cascade do |t|

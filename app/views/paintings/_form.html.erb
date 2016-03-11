@@ -29,6 +29,12 @@
     <%= f.text_field :ordering %>
   </p>
 
+
+
+
+    <%= f.select :painting_type, [['Painting','Painting'],['Commissions','Commissions']] %>
+
+
   <p>
     <%= f.label :body %><br />
     <%= f.text_area :body %>

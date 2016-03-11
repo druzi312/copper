@@ -7,7 +7,7 @@
   <% @painting.tags.each do |tag| %>
     <%= link_to tag.name, tag_path(tag) %>
   <% end %> |
-  <i>Order <%= @painting.ordering %></i>
+  <i>Order <%= @painting.ordering %></i> | <%= @painting.painting_type %>
 </p>
 
 <%= link_to "<< Back to Paintings List", paintings_path %> |

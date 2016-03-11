@@ -37,7 +37,7 @@ $gray-medium-light: #eee;
 /* universal */
 
 body {
-  padding-top: 60px;
+  padding-top: 75px;
 }
 
 section {
@@ -70,7 +70,7 @@ h1 {
   font-size: 3em;
   letter-spacing: -2px;
   margin-bottom: 30px;
-  text-align: center;
+  text-align: left;
 }
 
 h2 {
@@ -94,21 +94,31 @@ p {
 /* header */
 
 #logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
+    color: white;
+    float: left;
+    font-size: 1.7em;
+    font-weight: bold;
+    letter-spacing: 0;
+    margin-right: 10px;
+    padding-top: 0;
+    text-transform: uppercase;
   &:hover {
     color: white;
     text-decoration: none;
   }
 }
 
-
+#cop-navbar {
+    background-color: #fff;
+    border-color: #ccc;
+    margin: 0;
+    padding: 15px 0;
+}
+#cop-navbar.navbar-inverse .navbar-nav > li > a:hover, 
+#cop-navbar.navbar-inverse .navbar-nav > li > a:focus {
+    background-color: transparent;
+    color: #ccc;
+}
 
 
 

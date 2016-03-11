@@ -7,9 +7,11 @@ class PaintingsController < ApplicationController
 	def index
 		#@paintings = @paintings.sort_by{|k,ordering| ordering}
 		# @projects = Project.all.sort_by &:created_at
-		@paintings = Painting.all.sort_by &:ordering
 
-		#.sort_by{:ordering}
+		#@paintings = Painting.where.not("painting_type = ?", [""].to_yaml)
+
+		@paintings = Painting.where.not("painting_type = ?", ["paintings"].to_yaml).sort_by &:ordering
+
 		#@users = User.paginate(:page => params[:page], :per_page => 5)
 	end
 
