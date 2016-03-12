@@ -9,8 +9,13 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
-//= require jquery
+
+//= require jquery-1.5.min
+//= require jquery.easing.1.3
+//= require jquery.scrollTo-1.4.2-min
+//= require jquery.coda-slider-2.0.js
+//= require copper
+
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .

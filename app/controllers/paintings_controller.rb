@@ -25,7 +25,9 @@ class PaintingsController < ApplicationController
     #@accomplished_goals = painting.painting_featured
     #@unaccomplished_goals = painting.non_painting_featured
 
-    	@paintings = Painting.all.where(painting_featured: false).sort_by &:ordering 
+    	@paintings = Painting.all.where(painting_featured: true).sort_by &:ordering 
+
+    	@paintings2 = Painting.all.where(painting_featured: false).sort_by &:ordering 
 
 
 	#scope :non_painting_featured, -> { where(painting_featured: false) }	

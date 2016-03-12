@@ -8,7 +8,30 @@
   
       <li>        
         <a href="<%= painting_path(painting) %>">
-          <img src="<%= painting.image.url(:medium) %>">
+          <img src="<%= painting.image.url(:small) %>">
+        </a>        
+        <br />
+        <%= link_to painting.title, painting_path(painting), 
+        class: 'painting_title', 
+        id: "painting_#{painting.id}" %> |
+        <i><%= painting.body %></i>
+        <span class="cop-order-info"><%= painting.ordering %></span>
+        <br />
+      </li>
+  
+  <% end %>
+</ul>
+
+<hr style="clear: both;"/>
+
+<h1>Comissions</h1>
+
+<ul class="paintings">
+  <% @paintings2.each do |painting| %>
+  
+      <li>        
+        <a href="<%= painting_path(painting) %>">
+          <img src="<%= painting.image.url(:small) %>">
         </a>        
         <br />
         <%= link_to painting.title, painting_path(painting), 
@@ -24,13 +47,6 @@
 </ul>
 
 <hr style="clear: both;"/>
-
-<h1>Comissions</h1>
-
-
-
-
-
 
 <p>
 <%= link_to "Create a New Painting", new_painting_path, class: "new_painting" %>

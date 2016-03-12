@@ -273,11 +273,97 @@ input {
     overflow: auto;
     margin: 10px;
     border-bottom: 1px solid $gray-lighter;
-    width: 300px;
+    width: 150px;
     float: left;
   }
 }
 
 
 
+/* Drop Down Area */
+
+#pulldown, #pulldown p, #pulldown h2 {
+    background-color: #777777;
+    color: #ffffff;
+}
+#pulldown p {
+    font-size: 11px;
+    padding-bottom: 15px;
+}
+#pulldown a {
+    color: #ffff00;
+    font-weight: bold;
+    text-decoration: none;
+}
+#pulldown a.bigger {
+    font-size: 18px;
+}
+#pulldown a:hover {
+    text-decoration: underline;
+}
+#pulldown header {
+    background-color: #777777;
+    color: #777777;
+    display: inline-block;
+    padding-right: 25px;
+}
+.top {
+    background: rgba(0, 0, 0, 0) url("../images/line.gif") repeat-x scroll center 40px;
+    font-weight: 500;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+#pulldown .top {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+}
+#aboutclose {
+    bottom: -58px;
+    height: 68px;
+    padding: 0 15px;
+    position: absolute;
+    right: 173px;
+    text-align: center;
+    width: 60px;
+}
+#about {
+    background-color: #777777;
+    display: none;
+    font-weight: 200;
+    height: 470px;
+    position: relative;
+}
+#about img.avatar {
+    float: left;
+    padding-right: 50px;
+}
+
+#join {
+    display: none;
+    height: 470px;
+    position: relative;
+}
+#joinclose {
+    height: 68px;
+    padding: 0 42px;
+    position: absolute;
+    right: 20px;
+    text-align: center;
+    top: 460px;
+    width: 80px;
+}
+#join h2 {
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    padding-bottom: 25px;
+}
+#join img.avatar {
+    float: right;
+    position: relative;
+    top: 90px;
+}
+#join p {
+    font-size: 17px;
+    font-weight: 200;
+    letter-spacing: 0.4px;
+}
 
