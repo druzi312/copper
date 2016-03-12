@@ -2,52 +2,119 @@
 
 <h1>Paintings</h1>
 
+<!-- Preload BG Images 
 
-<ul class="paintings">
-  <% @paintings.each do |painting| %>
-  
-      <li>        
-        <a href="<%= painting_path(painting) %>">
-          <img src="<%= painting.image.url(:small) %>">
-        </a>        
-        <br />
-        <%= link_to painting.title, painting_path(painting), 
-        class: 'painting_title', 
-        id: "painting_#{painting.id}" %> |
-        <i><%= painting.body %></i>
-        <span class="cop-order-info"><%= painting.ordering %></span>
-        <br />
-      </li>
-  
-  <% end %>
-</ul>
+<div id="preload">
+  <img src="_img/arrow/sprite.png" width="31" height="69"/>
+    <img src="_img/arrow/sprite_down.png" width="31" height="69"/>
+  <img src="_img/arrow/left.png" width="31" height="31"/>
+    <img src="_img/arrow/right.png" width="31" height="31"/>
+    <img src="_img/arrow/black-left.png" width="31" height="31"/>
+    <img src="_img/arrow/black-right.png" width="31" height="31"/>
+    <img src="_img/line.gif" width="3" height="1"/>
+</div>
 
-<hr style="clear: both;"/>
+-->
 
-<h1>Comissions</h1>
+  <div id="art-index" class="container">
+    <div class="top">
+      <a id="close" href="#">Gallery</a>
+    </div>   
 
-<ul class="paintings">
-  <% @paintings2.each do |painting| %>
-  
-      <li>        
-        <a href="<%= painting_path(painting) %>">
-          <img src="<%= painting.image.url(:small) %>">
-        </a>        
-        <br />
-        <%= link_to painting.title, painting_path(painting), 
-        class: 'painting_title', 
-        id: "painting_#{painting.id}" %> |
-        <i><%= painting.body %></i>
-        <span class="cop-order-info"><%= painting.ordering %></span>
-        <br />
-        <%= painting.painting_featured %>
-      </li>
-  
-  <% end %>
-</ul>
+    <ul class="paintings">
+      <% @paintings.each do |painting| %>
+      
+          <li>        
+            <a class="xtrig" rel="coda-slider-1" href="#1">
+              <img src="<%= painting.image.url(:small) %>">
+            </a>        
+            <br />
+            <%= link_to painting.title, painting_path(painting), 
+            class: 'painting_title', 
+            id: "painting_#{painting.id}" %> |
+            <i><%= painting.body %></i>
+            <span class="cop-order-info"><%= painting.ordering %></span>
+            <br />
+          </li>
+      
+      <% end %>
+    </ul>
 
-<hr style="clear: both;"/>
+    <hr style="clear: both;"/>
 
-<p>
-<%= link_to "Create a New Painting", new_painting_path, class: "new_painting" %>
-</p>
+    <h1>Comissions</h1>
+
+    <ul class="paintings">
+      <% @paintings2.each do |painting| %>
+      
+          <li>        
+            <a href="<%= painting_path(painting) %>">
+              <img src="<%= painting.image.url(:small) %>">
+            </a>        
+            <br />
+            <%= link_to painting.title, painting_path(painting), 
+            class: 'painting_title', 
+            id: "painting_#{painting.id}" %> |
+            <i><%= painting.body %></i>
+            <span class="cop-order-info"><%= painting.ordering %></span>
+            <br />
+            <%= painting.painting_featured %>
+          </li>
+      
+      <% end %>
+    </ul>
+
+    <hr style="clear: both;"/>
+
+    <p>
+    <%= link_to "Create a New Painting", new_painting_path, class: "new_painting" %>
+    </p>
+
+</div>
+
+<div class="wrapper">
+  <div class="container">
+
+    <noscript>
+      <div>
+            <p>Unfortunately your browser does not hava JavaScript capabilities which are required to exploit full functionality of our site. This could be the result of two possible scenarios:</p>
+            <ol>
+                <li>You are using an old web browser, in which case you should upgrade it to a newer version. We recommend the latest version of <a href="http://www.getfirefox.com">Firefox</a>.</li>
+                <li>You have disabled JavaScript in you browser, in which case you will have to enable it to properly use our site. <a href="http://www.google.com/support/bin/answer.py?answer=23852">Learn how to enable JavaScript</a>.</li>
+            </ol>
+        </div>
+    </noscript>
+
+    <div id="art-gallery">
+      <a id="slider-close" href="#">Art Index</a>
+      <div id="slider" class="coda-slider-wrapper">
+        <div class="coda-slider preload" id="coda-slider-1">
+
+          <div class="panel">
+              <div class="panel-wrapper">
+                  <img src="images/artwork/large/stan.gif" alt="Stan Wasserman" width="681" height="510" />
+                  <h2 id="title"><strong>Stan Wasserman</strong> (Acrylic 18 X 24)</h2>
+              </div>
+          </div>
+      
+          <div class="panel">
+              <div class="panel-wrapper">
+                  <img src="images/artwork/large/IT-290.jpg" alt="IT-290" />
+                  <h2 id="title"><strong>IT-290</strong> (Acrylic 18 x 24)</h2>
+              </div>
+          </div>
+                
+          <div class="panel">
+              <div class="panel-wrapper">
+                  <img src="images/artwork/large/thewizardofass.jpg" alt="The Wizzard of Ass" width="680" height="510" />
+                  <h2 id="title"><strong>The Wizzard of Ass</strong> (Acrylic 18 X 24)</h2>
+              </div>
+          </div>
+
+        </div>  
+      </div>
+    </div>
+
+  </div>
+</div>
+
