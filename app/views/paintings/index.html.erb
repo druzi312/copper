@@ -2,19 +2,9 @@
 
 <h1>Paintings</h1>
 
-<!-- Preload BG Images 
 
-<div id="preload">
-  <img src="_img/arrow/sprite.png" width="31" height="69"/>
-    <img src="_img/arrow/sprite_down.png" width="31" height="69"/>
-  <img src="_img/arrow/left.png" width="31" height="31"/>
-    <img src="_img/arrow/right.png" width="31" height="31"/>
-    <img src="_img/arrow/black-left.png" width="31" height="31"/>
-    <img src="_img/arrow/black-right.png" width="31" height="31"/>
-    <img src="_img/line.gif" width="3" height="1"/>
-</div>
 
--->
+
 
   <div id="art-index" class="container">
     <div class="top">
@@ -22,10 +12,11 @@
     </div>   
 
     <ul class="paintings">
+      <% @number = 0 %>
       <% @paintings.each do |painting| %>
       
           <li>        
-            <a class="xtrig" rel="coda-slider-1" href="#1">
+            <a class="xtrig" rel="coda-slider-1" href="#<%= @number += 1 %>">
               <img src="<%= painting.image.url(:small) %>">
             </a>        
             <br />
@@ -45,10 +36,11 @@
     <h1>Comissions</h1>
 
     <ul class="paintings">
+      <% @numberNew = @number %>
       <% @paintings2.each do |painting| %>
       
           <li>        
-            <a href="<%= painting_path(painting) %>">
+            <a class="xtrig" rel="coda-slider-1" href="#<%= @numberNew += 1 %>">
               <img src="<%= painting.image.url(:small) %>">
             </a>        
             <br />
@@ -85,31 +77,32 @@
         </div>
     </noscript>
 
-    <div id="art-gallery">
+    <div id="art-gallery" style="display: none;">
       <a id="slider-close" href="#">Art Index</a>
       <div id="slider" class="coda-slider-wrapper">
         <div class="coda-slider preload" id="coda-slider-1">
 
-          <div class="panel">
-              <div class="panel-wrapper">
-                  <img src="images/artwork/large/stan.gif" alt="Stan Wasserman" width="681" height="510" />
-                  <h2 id="title"><strong>Stan Wasserman</strong> (Acrylic 18 X 24)</h2>
-              </div>
-          </div>
+      <% @paintingsFull.each do |painting| %>
       
           <div class="panel">
-              <div class="panel-wrapper">
-                  <img src="images/artwork/large/IT-290.jpg" alt="IT-290" />
-                  <h2 id="title"><strong>IT-290</strong> (Acrylic 18 x 24)</h2>
-              </div>
+            <div class="panel-wrapper">            
+              <img src="<%= painting.image.url(:large) %>">
+              <h2 id="title"><strong>Stan Wasserman</strong> (Acrylic 18 X 24)</h2>   
+            </div>
           </div>
-                
+      
+      <% end %>
+
+      <% @paintingsFullNon.each do |painting| %>
+      
           <div class="panel">
-              <div class="panel-wrapper">
-                  <img src="images/artwork/large/thewizardofass.jpg" alt="The Wizzard of Ass" width="680" height="510" />
-                  <h2 id="title"><strong>The Wizzard of Ass</strong> (Acrylic 18 X 24)</h2>
-              </div>
+            <div class="panel-wrapper">            
+              <img src="<%= painting.image.url(:large) %>">
+              <h2 id="title"><strong>Stan Wasserman</strong> (Acrylic 18 X 24)</h2>   
+            </div>
           </div>
+      
+      <% end %>      
 
         </div>  
       </div>
