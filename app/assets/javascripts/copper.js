@@ -1,28 +1,21 @@
 // JavaScript Document
-$().ready(function() {
 
-	$('#coda-slider-1').codaSlider();
+$(document).on("page:change", function() {
 
-	$('#allartwork_link').click(function () {
-		if ($('#art-gallery').is(':visible')){
-			$("#art-gallery").slideUp("fast");
-			$('#art-index').slideDown("slow");
-		}
-		else{
-			$("#art-index").slideUp("slow");
-			$("#art-gallery").slideDown("slow");
-		}
-	});
+	
 
 	$('#slider-close').click(function () {
 		$('#art-gallery').slideUp('slow');
 		$('#art-index').slideDown('slow');
 	});
 
-	$('#close').click(function () {
-			$("#art-index").slideUp("fast");
-			$("#art-gallery").slideDown("slow");
+	$('#close').click(function(){
+		$("#art-index").slideUp('fast');
+		$("#art-gallery").slideDown('slow');
+		//alert ('hello');
 	});
+	
+
 	
 	$('#jointhemailinglist').click(function () {
 		if ($("#about").is(":visible")) {
@@ -83,11 +76,5 @@ $().ready(function() {
 			}
 		});
 
-	$('#cartooncontest').click(function () {
-		$("#cartoon_contest").slideToggle("slow", function(){
-			$.scrollTo("max",300);
-		});
-			return false;
 
-		});
 });

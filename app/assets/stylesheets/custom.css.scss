@@ -266,7 +266,7 @@ input {
 
 /* Paintings index */
 
-.paintings {
+.paintingsListing {
   list-style: none;
   margin: 0;
   li {
@@ -281,6 +281,10 @@ input {
 
 
 /* Drop Down Area */
+
+#art-gallery {
+  display: none;
+}
 
 #pulldown, #pulldown p, #pulldown h2 {
     background-color: #777777;
@@ -366,6 +370,12 @@ input {
     font-weight: 200;
     letter-spacing: 0.4px;
 }
+
+#close, #slider-close, #aboutpull, #jointhemailinglist {
+  cursor: pointer;
+}
+
+
 
 /*
   jQuery Coda-Slider v2.0 - http://www.ndoherty.biz/coda-slider

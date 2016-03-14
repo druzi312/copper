@@ -2,21 +2,17 @@
 
 <h1>Paintings</h1>
 
-
-
-
-
   <div id="art-index" class="container">
     <div class="top">
-      <a id="close" href="#">Gallery</a>
+      <a id="close">Gallery</a>
     </div>   
 
-    <ul class="paintings">
+    <ul class="paintingsListing">
       <% @number = 0 %>
       <% @paintings.each do |painting| %>
       
           <li>        
-            <a class="xtrig" rel="coda-slider-1" href="#<%= @number += 1 %>">
+            <a class="xtrig" rel="coda-slider-1" href="#<%= @number =+ 1 %>">
               <img src="<%= painting.image.url(:small) %>">
             </a>        
             <br />
@@ -35,7 +31,7 @@
 
     <h1>Comissions</h1>
 
-    <ul class="paintings">
+    <ul class="paintingsListing">
       <% @numberNew = @number %>
       <% @paintings2.each do |painting| %>
       
@@ -77,8 +73,13 @@
         </div>
     </noscript>
 
-    <div id="art-gallery" style="display: none;">
-      <a id="slider-close" href="#">Art Index</a>
+
+
+
+
+
+    <div id="art-gallery">
+      <a id="slider-close" >Art Index</a>
       <div id="slider" class="coda-slider-wrapper">
         <div class="coda-slider preload" id="coda-slider-1">
 
@@ -87,7 +88,8 @@
           <div class="panel">
             <div class="panel-wrapper">            
               <img src="<%= painting.image.url(:large) %>">
-              <h2 id="title"><strong>Stan Wasserman</strong> (Acrylic 18 X 24)</h2>   
+              <h2 id="title"><strong><%= painting.title %></strong> <%= painting.body %></h2>
+           
             </div>
           </div>
       
@@ -98,7 +100,7 @@
           <div class="panel">
             <div class="panel-wrapper">            
               <img src="<%= painting.image.url(:large) %>">
-              <h2 id="title"><strong>Stan Wasserman</strong> (Acrylic 18 X 24)</h2>   
+              <h2 id="title"><strong><%= painting.title %></strong> <%= painting.body %></h2>   
             </div>
           </div>
       
