@@ -5,25 +5,6 @@ class PaintingsController < ApplicationController
 	before_action :admin_user,     only: [ :edit, :update, :destroy, :new ]
 
 	def index
-		#@paintings = @paintings.sort_by{|k,ordering| ordering}
-		# @projects = Project.all.sort_by &:created_at
-
-		#@users = User.paginate(:page => params[:page], :per_page => 5)
-
-		#@paintings = Painting.where.not("painting_type = ?", [""].to_yaml)
-
-		#if params[:painting_featured] == true
-	
-    	#params[:painting_featured] == "true"
-
-    	#@paintings_feature = Painting.find(params[:id])
-    	#@paintings = @painting.painting_featured
-
-		#scope :painting_featured, where(:painting_featured => true)
-		#scope :non_featured, -> { where(painting_featured: false) }
-    	
-    #@accomplished_goals = painting.painting_featured
-    #@unaccomplished_goals = painting.non_painting_featured
 
     	@paintings = Painting.all.where(painting_featured: true).sort_by &:ordering 
     	@paintings2 = Painting.all.where(painting_featured: false).sort_by &:ordering 
@@ -31,15 +12,8 @@ class PaintingsController < ApplicationController
     	@paintingsFull = Painting.all.where(painting_featured: true).sort_by &:ordering 
     	@paintingsFullNon = Painting.all.where(painting_featured: false).sort_by &:ordering 
 
-
-	#scope :non_painting_featured, -> { where(painting_featured: false) }	
-	
-    #@paintings = painting.painting_featured
-    #@unaccomplished_paint = painting.non_painting_featured
-
 	end
   	
-
 	def show
 		@painting = Painting.find(params[:id])
 	end
@@ -70,6 +44,16 @@ class PaintingsController < ApplicationController
 	  @painting.update(painting_params)
 	  redirect_to painting_path(@painting)
 	  flash[:success] = "Painting Updated"
+	end
+
+	def order
+
+    	@paintings = Painting.all.where(painting_featured: true).sort_by &:ordering 
+    	@paintings2 = Painting.all.where(painting_featured: false).sort_by &:ordering 
+
+    	@paintingsFull = Painting.all.where(painting_featured: true).sort_by &:ordering 
+    	@paintingsFullNon = Painting.all.where(painting_featured: false).sort_by &:ordering 
+
 	end
 
   private

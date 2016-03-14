@@ -1,0 +1,58 @@
+<% provide(:title, 'Paintings Order') %>
+
+<h1>Paintings Order</h1>
+
+  <div id="art-index" class="container"> 
+
+    <ul class="">
+      <% @number = 0 %>
+      <% @paintings.each do |painting| %>
+      
+          <li>        
+            <%= link_to painting.title, painting_path(painting), 
+            class: 'painting_title', 
+            id: "painting_#{painting.id}" %> |
+            <i><%= painting.body %></i>
+            <span class="cop-order-info"><%= painting.ordering %></span>
+            <br />
+            Featured: <%= painting.painting_featured %>
+            
+            <% if current_user.admin? %>
+              | <%= link_to "delete", painting, method: :delete, data: { confirm: "You sure?" } %>
+            <% end %>
+
+          </li>
+      
+      <% end %>
+    </ul>
+
+    <hr style="clear: both;"/>
+
+    <h1>Comissions</h1>
+
+    <ul class="">
+      <% @numberNew = @number %>
+      <% @paintings2.each do |painting| %>
+      
+          <li>        
+            <%= link_to painting.title, painting_path(painting), 
+            class: 'painting_title', 
+            id: "painting_#{painting.id}" %> |
+            <i><%= painting.body %></i>
+            <span class="cop-order-info"><%= painting.ordering %></span>
+            <br />
+            Featured: <%= painting.painting_featured %>
+          </li>
+      
+      <% end %>
+    </ul>
+
+    <hr style="clear: both;"/>
+
+    <p>
+    <%= link_to "Create a New Painting", new_painting_path, class: "new_painting" %>
+    </p>
+
+</div>
+
+

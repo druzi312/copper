@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 
+
 //= require jquery-1.5.min
 //= require jquery.easing.1.3
 //= require jquery.scrollTo-1.4.2-min
@@ -21,3 +22,5 @@
 //= require_tree .
 
 //= require bootstrap
+
+

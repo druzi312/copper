@@ -13,8 +13,10 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
 
-  resources :tags
+  get    'paintings/order'   => 'paintings#order'
   resources :paintings
+
+  resources :tags
   resources :users
   resources :account_activations, only: [:edit]
 
