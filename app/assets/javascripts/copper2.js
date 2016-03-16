@@ -1,6 +1,6 @@
 // JavaScript Document
 
-$(document).on("page:change", function() {
+$().ready(function() {
 
 	$('#coda-slider-1').codaSlider();
 	

@@ -12,7 +12,7 @@
       <% @paintings.each do |painting| %>
       
           <li>        
-            <a class="xtrig" rel="coda-slider-1" href="#<%= @number =+ 1 %>">
+            <a class="xtrig" rel="coda-slider-1" href="#<%= @number += 1 %>">
               <img src="<%= painting.image.url(:small) %>">
             </a>        
             <br />

@@ -16,13 +16,24 @@
             <span class="cop-order-info"><%= painting.ordering %></span>
             <br />
             Featured: <%= painting.painting_featured %>
-            
+
             <% if current_user.admin? %>
               | <%= link_to "delete", painting, method: :delete, data: { confirm: "You sure?" } %>
+            <% end %>            
+            
+            <%= form_for(painting, html: {multipart: true}) do |f| %>
+              <p>
+                <%= f.label :ordering %><br />
+                <%= f.text_field :ordering %>
+              </p>
+              <p>
+                <%= f.submit %>
+              </p>
             <% end %>
 
           </li>
-      
+
+       
       <% end %>
     </ul>
 
