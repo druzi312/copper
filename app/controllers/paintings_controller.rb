@@ -42,7 +42,14 @@ class PaintingsController < ApplicationController
 	def update
 	  @painting = Painting.find(params[:id])
 	  @painting.update(painting_params)
-	  redirect_to painting_path(@painting)
+	  
+	  respond_to do |format|
+	  	format.html { redirect_to painting_path(@painting) }
+	  	format.js #render paintings/update.js.erb
+	  end
+	  	
+	  #redirect_to painting_path(@painting)
+
 	  flash[:success] = "Painting Updated"
 	end
 

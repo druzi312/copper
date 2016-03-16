@@ -13,7 +13,7 @@
             class: 'painting_title', 
             id: "painting_#{painting.id}" %> |
             <i><%= painting.body %></i>
-            <span class="cop-order-info"><%= painting.ordering %></span>
+            <span id= "cop-order_num_<%= painting.id %>" class="cop-order-info"><%= painting.ordering %></span>
             <br />
             Featured: <%= painting.painting_featured %>
 
@@ -21,13 +21,11 @@
               | <%= link_to "delete", painting, method: :delete, data: { confirm: "You sure?" } %>
             <% end %>            
             
-            <%= form_for(painting, html: {multipart: true}) do |f| %>
+            <%= form_for (painting), remote: true do |f| %>
               <p>
                 <%= f.label :ordering %><br />
                 <%= f.text_field :ordering %>
-              </p>
-              <p>
-                <%= f.submit %>
+                <span style="float: right;"><%= f.submit %></span>
               </p>
             <% end %>
 
