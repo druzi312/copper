@@ -133,7 +133,8 @@ $(document).on("page:change", function() {
 				currentSlide++;
 				if(currentSlide === $slides.length + 1) {
 					currentSlide = 1;
-					$sliderContainer.css("margin-left", 0);
+					$sliderContainer.css("margin-left", width);
+					$sliderContainer.animate({"margin-left": 0}, animationSpeed);
 				};
 			});	
 		}, pause);
@@ -153,10 +154,12 @@ $(document).on("page:change", function() {
 			//$('#slideBack').show();
 			console.log(currentSlide);
 			if(currentSlide === $slides.length + 1) {
+				console.log("newSlideX:" + currentSlide);
+				$sliderContainer.stop();
 				currentSlide = 1;
-				$sliderContainer.css("margin-left", 0);
+				$sliderContainer.css("margin-left", width);
+				$sliderContainer.animate({"margin-left": 0}, animationSpeed);
 			};
-
 		});		
 	});	
 
@@ -170,9 +173,11 @@ $(document).on("page:change", function() {
 			console.log("currentSlide: " + currentSlide);
 			//$('#slideBack').show();
 			if(currentSlide === 0) {
+				console.log("newSlide0:" + currentSlide);
+				$sliderContainer.stop();
 				currentSlide = $slides.length;
-				$sliderContainer.css("margin-left", -slideLength+width);
-				console.log("newSlide:" + currentSlide);
+				$sliderContainer.css("margin-left", -slideLength);
+				$sliderContainer.animate({"margin-left": -slideLength+width}, animationSpeed);
 			};
 		});		
 	});		
@@ -210,7 +215,7 @@ $(document).on("page:change", function() {
 		console.log("hrefPainting: " + hrefPainting);
 
 		$sliderContainer.animate({"margin-left": -width * hrefPainting + width}, animationSpeed, function(){
-			currentSlide = $slides.length;
+			currentSlide = hrefPainting;
 			console.log(currentSlide);
 			//$('#slideBack').show();	
 		});		
