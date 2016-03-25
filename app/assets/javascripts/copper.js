@@ -2,18 +2,9 @@
 
 $(document).on("page:change", function() {
 
-	$('#xtrigger img').click(function() {
-	
-		//event.preventDefault();
-		//alert ("trig");
 
-		$("#art-index").slideUp('fast');
-		$("#art-gallery").slideDown('slow');
-		//location.reload();
-		
-	});	
-
-	$('#allartwork_link').click(function () {
+	$('#allartwork_link').click(function (event) {
+		event.preventDefault();
 		if ($('#art-gallery').is(':visible')){
 			$("#art-gallery").slideUp("fast");
 			$('#art-index').slideDown("slow");
@@ -24,7 +15,8 @@ $(document).on("page:change", function() {
 		}
 	});
 
-	$('#slider-close').click(function () {
+	$('#slider-close').click(function (event) {
+		event.preventDefault();
 		$('#art-gallery').slideUp('slow');
 		$('#art-index').slideDown('slow');
 		$('#slideShow').show();
@@ -32,7 +24,8 @@ $(document).on("page:change", function() {
 		stopSlider();		
 	});
 
-	$('#close').click(function () {
+	$('#close').click(function (event) {
+		event.preventDefault();
 		$("#art-index").slideUp('fast');
 		$("#art-gallery").slideDown('slow');
 
@@ -174,7 +167,7 @@ $(document).on("page:change", function() {
 		stopSlider();
 		$sliderContainer.animate({"margin-left": "+="+width}, animationSpeed, function(){
 			currentSlide--;
-			console.log(currentSlide);
+			console.log("currentSlide: " + currentSlide);
 			//$('#slideBack').show();
 			if(currentSlide === 0) {
 				currentSlide = $slides.length;
@@ -199,6 +192,29 @@ $(document).on("page:change", function() {
 		stopSlider();
 	});	
 
+
+
+	$('.xtrig').click(function() {	
+		//event.preventDefault();
+		//alert ("trig");
+		$("#art-index").slideUp('fast');
+		$("#art-gallery").slideDown('slow');
+
+		var hrefPainting;
+		hrefPainting = this.href;
+		// http://localhost:3000/paintings# gets cut
+		hrefPainting = hrefPainting.slice(32);
+
+
+
+		console.log("hrefPainting: " + hrefPainting);
+
+		$sliderContainer.animate({"margin-left": -width * hrefPainting + width}, animationSpeed, function(){
+			currentSlide = $slides.length;
+			console.log(currentSlide);
+			//$('#slideBack').show();	
+		});		
+	});	
 
 
 

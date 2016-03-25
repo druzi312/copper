@@ -36,7 +36,7 @@
       <% @paintings2.each do |painting| %>
       
           <li>        
-            <a class="xtrig" rel="coda-slider-1" href="#<%= @numberNew += 1 %>">
+            <a id="xtrigger" class="xtrig" rel="coda-slider-1" href="#<%= @numberNew += 1 %>">
               <img src="<%= painting.image.url(:small) %>">
             </a>        
             <br />
