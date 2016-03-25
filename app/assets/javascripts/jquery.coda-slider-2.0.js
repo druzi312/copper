@@ -158,6 +158,7 @@ $.fn.codaSlider = function(settings) {
 				});
 			};
 		});	
+
 		if( window.location.hash == '#16'){
 			$('#art-index').slideUp('slow');
 			$('#art-gallery').slideDown('slow');
@@ -169,6 +170,7 @@ $.fn.codaSlider = function(settings) {
 		if( window.location.hash == '#2'){
 			$('#art-index').slideUp('slow');
 			$('#art-gallery').slideDown('slow');
+			//alert("stuff");
 		}
 		
 		// Specify which tab is initially set to "current". Depends on if the loaded URL had a hash or not (cross-linking).

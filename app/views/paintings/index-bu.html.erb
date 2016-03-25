@@ -61,7 +61,7 @@
 </div>
 
 <div class="wrapper">
-  <div class="container-hc">
+  <div class="container">
 
     <noscript>
       <div>
@@ -79,44 +79,37 @@
 
 
     <div id="art-gallery">
-      <a href="#" id="slider-close" >Art Index</a> <br />
-
-
-      <a href="#" id="slideShow" >Slideshow</a> 
-      <a href="#" id="slideShowStop" style="display :none;" >Pause Slideshow</a> <br />
-
-      <a href="#" id="slideBack"> < Back </a> |
-      <a href="#" id="slideFront"> Front > </a> 
-
-      <div id="slider" class="hc-slider-wrapper">
-        <ul class="slides">
+      <a id="slider-close" >Art Index</a>
+      <div id="slider" class="coda-slider-wrapper">
+        <div class="coda-slider preload" id="coda-slider-1">
 
       <% @paintingsFull.each do |painting| %>
-          <li class="slide">
+      
+          <div class="panel">
             <div class="panel-wrapper">            
               <img src="<%= painting.image.url(:large) %>">
               <h2 id="title"><strong><%= painting.title %></strong> <%= painting.body %></h2>
            
             </div>
-          </li>
+          </div>
       
       <% end %>
 
       <% @paintingsFullNon.each do |painting| %>
       
-          <li class="slide">
+          <div class="panel">
             <div class="panel-wrapper">            
               <img src="<%= painting.image.url(:large) %>">
               <h2 id="title"><strong><%= painting.title %></strong> <%= painting.body %></h2>   
             </div>
-          </li>
+          </div>
       
       <% end %>      
 
-        </ul>
-      </div>  
-
+        </div>  
+      </div>
     </div>
+
   </div>
 </div>
 

@@ -6,11 +6,11 @@ class PaintingsController < ApplicationController
 
 	def index
 
-    	@paintings = Painting.all.where(painting_featured: true).sort_by &:ordering 
-    	@paintings2 = Painting.all.where(painting_featured: false).sort_by &:ordering 
+    	@paintings = Painting.all.where(painting_type: "Painting").sort_by &:ordering 
+    	@paintings2 = Painting.all.where(painting_type: "Commissions").sort_by &:ordering 
 
-    	@paintingsFull = Painting.all.where(painting_featured: true).sort_by &:ordering 
-    	@paintingsFullNon = Painting.all.where(painting_featured: false).sort_by &:ordering 
+    	@paintingsFull = Painting.all.where(painting_type: "Painting").sort_by &:ordering 
+    	@paintingsFullNon = Painting.all.where(painting_type: "Commissions").sort_by &:ordering 
 
 	end
   	
@@ -55,8 +55,8 @@ class PaintingsController < ApplicationController
 
 	def order
 
-    	@paintings = Painting.all.where(painting_featured: true).sort_by &:ordering 
-    	@paintings2 = Painting.all.where(painting_featured: false).sort_by &:ordering 
+    	@paintings = Painting.all.where(painting_type: "Painting").sort_by &:ordering 
+    	@paintings2 = Painting.all.where(painting_type: "Commissions").sort_by &:ordering 
 
     	@paintingsFull = Painting.all.where(painting_featured: true).sort_by &:ordering 
     	@paintingsFullNon = Painting.all.where(painting_featured: false).sort_by &:ordering 

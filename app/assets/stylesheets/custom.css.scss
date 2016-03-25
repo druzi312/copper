@@ -277,7 +277,11 @@ input {
     float: left;
   }
 }
-
+#xtrigger {
+  display: block;
+  width: 150px; 
+  height: 150px;
+}
 
 
 /* Drop Down Area */
@@ -388,6 +392,42 @@ body.order-body form.edit_painting input#painting_ordering {
   width: 40px;
 
 }
+
+
+
+
+
+/* New HC Slider */
+
+#slider {
+  width: 1170px;
+  height: 400px;
+  overflow: hidden;
+}
+#slider .slides {
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 6000px;
+  height: 400px;
+}
+#slider .slide {
+  float: left;
+  list-style-type: none;
+  width: 1170px;
+  height: 400px;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
