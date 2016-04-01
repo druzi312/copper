@@ -1,0 +1,12 @@
+<% provide(:title, "Contacts Subitted") %>
+<h1>All Contacts</h1>
+
+<ul id="contacts">
+  <% @contacts.each do |contact| %>
+  	<li>
+    	<div id="contactName">Name: <%= link_to contact.name, contact_path(contact), class: 'article_title' %></div>
+    	<div id="contactName">Email: <%= contact.email %></div>
+    	<div id="contactName">Message: <%= contact.message %></div>
+    </li>
+  <% end %>
+</ul>

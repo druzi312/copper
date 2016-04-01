@@ -1,0 +1,9 @@
+<% provide(:title, "Specific Contact Subitted") %>
+<h1>This Contact: <i><%= @contact.name %></i></h1>
+
+
+<p><%= @contact.email %></p>
+<p><%= @contact.message %></p>
+<%= link_to "<< Back to Contacts List", contacts_path %>
+<%= link_to "delete", contact_path(@contact), data: { confirm: "You sure?" }, method: :delete %>
+

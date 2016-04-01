@@ -10,6 +10,7 @@
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>
   </head>
+
   <body class="<%= controller_name %>-body <%= action_name %>-body">
 
 <div id="pulldown" class="wrapper">
@@ -18,7 +19,9 @@
             <header>About</header>
         </div>
         <div id="content" class="mod">
-            <img class="avatar" src="<?php print base_path() ?>sites/all/themes/zen/zen-internals/images/profile.jpg" width="400" alt="homeless cop" />
+
+            <%= link_to image_tag("profile.jpg", alt: "Homeless Cop About"), root_path, id: "logo" %>
+
             <h2 style="color:#FF0;">Homeless Cop</h2>
 <p>            Homeless Cop is a ghost of an alien artist, transmitted through a hologram of a person living in Chicago. He's accomplished fine Oil paintings, designs, and animation for Adult Swim and other cool people.</p>
             

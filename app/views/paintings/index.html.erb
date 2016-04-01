@@ -13,15 +13,20 @@
       
           <li>        
             <a id="xtrigger" class="xtrig" rel="coda-slider-1" href="#<%= @number += 1 %>">
+
               <img src="<%= painting.image.url(:small) %>">
-            </a>        
-            <br />
-            <%= link_to painting.title, painting_path(painting), 
-            class: 'painting_title', 
-            id: "painting_#{painting.id}" %> |
-            <i><%= painting.body %></i>
-            <span class="cop-order-info"><%= painting.ordering %></span>
-            <br />
+
+              <div id="" class="paintingInfo">
+
+                <h3><%= painting.title %></h3>
+
+                <i><%= painting.body %></i>
+
+                <span class="cop-order-info"><%= painting.ordering %></span>  
+
+              </div>           
+
+            </a> 
           </li>
       
       <% end %>
@@ -36,17 +41,21 @@
       <% @paintings2.each do |painting| %>
       
           <li>        
-            <a id="xtrigger" class="xtrig" rel="coda-slider-1" href="#<%= @numberNew += 1 %>">
+            <a id="xtrigger" class="xtrig" rel="coda-slider-1" href="#<%= @number += 1 %>">
+
               <img src="<%= painting.image.url(:small) %>">
-            </a>        
-            <br />
-            <%= link_to painting.title, painting_path(painting), 
-            class: 'painting_title', 
-            id: "painting_#{painting.id}" %> |
-            <i><%= painting.body %></i>
-            <span class="cop-order-info"><%= painting.ordering %></span>
-            <br />
-            <%= painting.painting_featured %>
+
+              <div id="" class="paintingInfo">
+
+                <h3><%= painting.title %></h3>
+
+                <i><%= painting.body %></i>
+
+                <span class="cop-order-info"><%= painting.ordering %></span>  
+
+              </div>           
+
+            </a> 
           </li>
       
       <% end %>

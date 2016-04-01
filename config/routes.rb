@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root             'static_pages#home'
   get 'help'    => 'static_pages#help'
   get 'about'   => 'static_pages#about'
-  get 'contact' => 'static_pages#contact'
+  #get 'contact' => 'static_pages#contact'
   get 'signup'  => 'users#new'
 
   #get 'sample-artwork'  => 'paintings/2'
@@ -15,6 +15,9 @@ Rails.application.routes.draw do
 
   get    'paintings/order'   => 'paintings#order'
   resources :paintings
+
+  get    'say-hello'   => 'contacts#new'
+  resources :contacts
 
   resources :tags
   resources :users
