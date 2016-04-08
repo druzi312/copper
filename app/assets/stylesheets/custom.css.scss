@@ -7,7 +7,7 @@
 
 /* mixins, variables, etc. */
 
-$gray-medium-light: #eee;
+$gray-medium-light: #000;
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -37,7 +37,7 @@ $gray-medium-light: #eee;
 /* universal */
 
 body {
-  padding-top: 75px;
+  padding-top: 125px;
 }
 
 section {
@@ -67,19 +67,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: left;
+    font-size: 3em;
+    letter-spacing: 0px;
+    margin-bottom: 30px;
+    text-align: left;
+    text-transform: uppercase;
+    color: $gray-medium-light;
+    
 }
+
+h1.home {display: none;} 
 
 h2 {
   font-size: 1.2em;
-  letter-spacing: -1px;
+  letter-spacing: 1px;
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $gray-light;
+  color: $gray-medium-light;
 }
 
 p {
@@ -87,7 +92,10 @@ p {
   line-height: 1.7em;
 }
 
-
+a, a:focus { 
+    outline: none; 
+    outline:0;
+}
 
 /* cop styles */
 
@@ -100,15 +108,55 @@ float: right;
 
 /* header */
 
+.container {
+    position: relative;
+}
+
+#networks {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 20px;
+    li {
+      float: left;
+      list-style-image: none;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    a {
+      background-image: url("/assets/network.png");
+      display: block;
+      height: 32px;
+      width: 32px;
+    }
+    #twitter a {
+      background-position: 0 32px;
+    }
+    #facebook a {
+      background-position: 0 94px;
+    }
+    #instigram a {
+      background-position: 0 62px;
+    }        
+    a:hover {
+      margin-top: 2px;
+    }    
+}
+
 #logo {
     color: white;
-    float: left;
+    display: block;
     font-size: 1.7em;
     font-weight: bold;
+    height: 46px;
     letter-spacing: 0;
-    margin-right: 10px;
+    margin: 0 auto;
     padding-top: 0;
+    text-align: center;
     text-transform: uppercase;
+    width: 350px;
   &:hover {
     color: white;
     text-decoration: none;
@@ -126,6 +174,73 @@ float: right;
     background-color: transparent;
     color: #ccc;
 }
+#cop-navbar nav .navbar-nav {
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+    width: 467px;  
+
+}
+
+
+
+
+/* music page */
+
+#dl-link {
+    background-image: url("/assets/dl2.gif");
+    background-position: 0 0;
+    display: block;
+    height: 105px;
+    left: 491px;
+    position: absolute;
+    top: 29px;
+    width: 120px;
+    &:hover {
+      background-position: 0 -110px;
+    }
+}
+
+ul#dl {
+    padding-bottom: 200px;
+    padding-top: 20px;
+    li {
+        list-style-type: none;
+        list-style-image: none;
+        font-size: 16px;
+        font-weight: bold;
+        padding-bottom: 5px;
+    }  
+    li span {
+        color: #cd0235;
+    }
+    span {
+        padding: 5px;
+    }      
+}
+
+body.music-body .jp-audio {
+    position: relative;
+    padding: 20px;
+    width: 570px;
+    h1 {
+      font-size: 42px;
+      text-align: left;
+      text-transform: uppercase;
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+    h2 {
+      text-align: left;
+      text-transform: uppercase;
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    }    
+}
+#music-artwork{
+  float: right;
+  padding-top: 30px;
+}
+
+
 
 
 
@@ -421,14 +536,20 @@ body.order-body form.edit_painting input#painting_ordering {
 
 
 
+#profile {
+  float: left;
+  padding: 20px;
+}
+
+
 
 
 /* New HC Slider */
 
 #slider {
-  width: 1170px;
-  height: 500px;
-  overflow: hidden;
+    height: 555px;
+    overflow: hidden;
+    width: 1170px;
 }
 #slider .slides {
   margin: 0;
@@ -454,6 +575,126 @@ ul#contacts li {
   padding-bottom: 20px;  
 
 }
+
+#art-index,
+#art-gallery {
+  position: relative;
+}
+
+
+#art-index #close {
+    background-image: url("/assets/arrow/sprite.png");
+    background-position: 10px 0;
+    background-repeat: no-repeat;
+    float: right;
+    font-weight: bold;
+    height: 10px;
+    padding-left: 7px;
+    padding-right: 10px;
+    padding-top: 42px;
+    width: 65px;
+    position: absolute;
+    right: 0; 
+    top: 28px;   
+}
+#art-index #close:hover {
+    background-position: 10px -50px;
+    color: #000;
+}
+#slider-close {
+    background-image: url("/assets/arrow/sprite_down.png");
+    background-position: 14px -39px;
+    background-repeat: no-repeat;
+    float: right;
+    font-size: 15px;
+    font-weight: bold;
+    height: 10px;
+    padding-top: 50px;
+    position: absolute;
+    right: 0;
+    top: 28px;
+    width: 65px;
+    z-index: 10;
+}
+#slider-close:hover {
+    background-position: 14px 7px;
+}
+
+#slideFront, #slideBack {
+    display: block;
+    height: 550px;
+    outline: medium none;
+    position: absolute;
+    text-decoration: none;
+    width: 112px;
+    text-indent: -100000px;
+}
+
+#slideFront {
+    background-image: url("/assets/arrow/right.png");
+    background-position: right center;
+    background-repeat: no-repeat;
+    float: right;
+    right: 0px;
+}
+
+#slideBack {
+    background-image: url("/assets/arrow/left.png");
+    background-position: left center;
+    background-repeat: no-repeat;
+    float: right;
+    left: 0px;
+}
+
+#slideShow, #slideShowStop {top: 34px; z-index: 2;}
+
+#slideShow {
+    background-image: url("/assets/arrow/sprite_play.png");
+    background-position: left -49px;
+    background-repeat: no-repeat;
+    height: 44px;
+    left: 0;
+    position: absolute;
+    text-indent: -100000px;
+    width: 42px;
+
+
+}
+
+#slideShowStop {
+    background-image: url("/assets/arrow/sprite_pause.png");
+    background-position: left -49px;
+    background-repeat: no-repeat;
+    height: 44px;
+    left: 0;
+    position: absolute;
+    text-indent: -100000px;
+    width: 42px;
+
+}
+
+
+
+
+
+#paintingsHomeContainer {
+    height: 510px;
+    overflow: hidden;
+    width: 510px;
+    li {
+    margin: 0px;
+    padding: 0px;
+    }
+    ul {
+    margin: 0px;
+    padding: 0px;
+    }    
+}
+
+
+
+
+
 
 
 

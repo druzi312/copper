@@ -1,25 +1,36 @@
 <% provide(:title, "Home") %>
-<h1>Welcome to Homeless Cop</h1>
+<h1 class="home">Welcome to Homeless Cop</h1>
 
- <ul class="paintingsHome">
-      <% @number = 0 %>
+<div id="art-gallery" style="display: block;">
+
+      <a href="#" id="slideShow" style="display :block;">Slideshow</a> 
+      <a href="#" id="slideShowStop" style="display :none;" >Pause Slideshow</a> <br />
+
+      <a href="#" id="slideBack"> < Back </a> 
+      <a href="#" id="slideFront"> Front > </a> 
+
+      <div id="slider" class="hc-slider-wrapper">
+        <ul class="slides">
+
       <% @paintings.each do |painting| %>
-      
-          <li>        
-            <a id="" class="" rel="coda-slider-1" href="#<%= @number += 1 %>">
-              <img src="<%= painting.image %>">
-            </a>        
-            <br />
-            <%= link_to painting.title, painting_path(painting), 
-            class: 'painting_title', 
-            id: "painting_#{painting.id}" %> |
-            <i><%= painting.body %></i>
-            <span class="cop-order-info"><%= painting.ordering %></span>
-            <br />
+          <li class="slide">
+            <div class="panel-wrapper">            
+              <img src="<%= painting.image.url(:large) %>">
+              <h2 id="title"><strong><%= painting.title %></strong> <%= painting.body %></h2>
+           
+            </div>
           </li>
       
-      <% end %>
-    </ul>
+      <% end %>   
+
+        </ul>
+      </div>  
+
+    </div>
+
+
+
+
 
     <hr style="clear: both;"/>
 

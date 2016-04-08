@@ -1,14 +1,16 @@
 <header id="cop-navbar" class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to image_tag("hc-logo.gif", alt: "Homeless Cop Logo"), root_path, id: "logo" %>
-    
+    <%= link_to image_tag("hc-logo.png", alt: "Homeless Cop Logo"), root_path, id: "logo" %>
+
+
+   
     <nav>
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav">
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Paintings", paintings_path %></li>
         <li><a id="aboutpull">About</a></li>
-        <li><a id="jointhemailinglist">Join the mailing list</a></li>
-        <li><%= link_to "Help", help_path %></li>
+        <li><%= link_to "Contact", :controller => :contacts, :action => :new %></li>
+        <li><%= link_to "Music", music_path %></li>
         <% if logged_in? %>
           
           <li class="dropdown">
@@ -32,6 +34,21 @@
         <% end %>
       </ul>
     </nav>
+
+
+<ul id="networks">
+  <li id="twitter">
+    <a href="https://twitter.com/homelesscop" alt="Homeless Cop Twitter" target="_blank"></a>
+  </li>
+  <li id="instigram">
+    <a href="https://www.instagram.com/homelesscop/" alt="Homeless Cop Instigram" target="_blank"></a>
+  </li>
+  <li id="facebook">
+    <a href="https://www.facebook.com/homelesscop " alt="Homeless Cop Facebook" target="_blank"></a>
+  </li>
+</ul>
+
+
   </div>
 
 </header>

@@ -1,6 +1,8 @@
 class StaticPagesController < ApplicationController
   def home
-	@paintings = Painting.all.where(painting_featured: true).sort_by &:ordering 
+
+	#@paintings = Painting.all.where(painting_featured: true).order(:ordering).limit(1)
+	@paintings = Painting.all.where(painting_featured: true).order(:ordering)
   end
 
   def help
@@ -9,7 +11,7 @@ class StaticPagesController < ApplicationController
   def about
   end
 
-  #def contact
-  #end
+  def music
+  end
 
 end
