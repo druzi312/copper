@@ -1,5 +1,11 @@
 <% provide(:title, "Submit a Contact") %>
 
+<h1><span style="float: left; padding-right: 5px;"><%= image_tag("eye.png") %></span>Contact</h1>
+
+<script type="text/javascript">
+  $( "#Contact-nav" ).css( "font-weight", "bold" );
+</script>
+
 <%= form_for(@contact) do |f| %>
   <ul>
   <% @contact.errors.full_messages.each do |error| %>
@@ -18,8 +24,8 @@
     <%= f.label :message %><br />
     <%= f.text_area :message %>
   </p>
-  <p>
-    <%= f.submit %>
+  <p style="text-align: center;">
+    <%= f.submit id: "hc_sub", value: "Send" %>
   </p>
 <% end %>
 

@@ -6,46 +6,32 @@
    
     <nav>
       <ul class="nav navbar-nav">
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Paintings", paintings_path %></li>
+        <li><%= link_to "Paintings", paintings_path, id: "Paintings-nav" %></li>
+        <li><%= link_to "Videos", video_path, id: "Videos-nav" %></li>
+        <li><%= link_to "Music", music_path, id: "Music-nav" %></li>
         <li><a id="aboutpull">About</a></li>
-        <li><%= link_to "Contact", :controller => :contacts, :action => :new %></li>
-        <li><%= link_to "Music", music_path %></li>
-        <% if logged_in? %>
-          
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Account <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <li><%= link_to "Order Paintings", :controller => :paintings, :action => :order %></li>
-              <li><%= link_to "Contacts from Website", contacts_path %></li>
-              <li><%= link_to "Profile", current_user %></li>
-              <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-              <li><%= link_to "Users", users_path %></li>
-              <li class="divider"></li>
-              <li>
-                <%= link_to "Log out", logout_path, method: "delete" %>
-              </li>
-            </ul>
-          </li>
-        <% else %>
-          <li><%= link_to "Log in", login_path %></li>
-        <% end %>
+        <li id="Contact-nav"><%= link_to "Contact", :controller => :contacts, :action => :new %></li>  
+        <li><a href="http://homelesscop.bigcartel.com/" alt="Homeless Cop Big Cartel" target="_blank">Store</a></li>
+
+
       </ul>
     </nav>
 
 
 <ul id="networks">
-  <li id="twitter">
-    <a href="https://twitter.com/homelesscop" alt="Homeless Cop Twitter" target="_blank"></a>
-  </li>
+  
   <li id="instigram">
     <a href="https://www.instagram.com/homelesscop/" alt="Homeless Cop Instigram" target="_blank"></a>
   </li>
+
+  <li id="twitter">
+    <a href="https://twitter.com/homelesscop" alt="Homeless Cop Twitter" target="_blank"></a>
+  </li>
+
   <li id="facebook">
     <a href="https://www.facebook.com/homelesscop " alt="Homeless Cop Facebook" target="_blank"></a>
   </li>
+
 </ul>
 
 

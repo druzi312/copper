@@ -1,7 +1,11 @@
 <% provide(:title, "Music") %>
 
 <script type="text/javascript">
-//<![CDATA[
+  $( "#Music-nav" ).css( "font-weight", "bold" );
+</script>
+
+<script type="text/javascript">
+
 $(document).ready(function(){
 
 	new jPlayerPlaylist({
@@ -9,20 +13,20 @@ $(document).ready(function(){
 		cssSelectorAncestor: "#jp_container_1"
 	}, [	
 		{
-			title: "Bear O Smith",
-			mp3: "<%= audio_path('BEAR-O-SMITH.mp3') %>"
+			title: "Bear O' Smith",
+			mp3: "<%= audio_path('BEAR-O-SMITH') %>"
 		},
 		{
 			title: "Miley Virus",
-			mp3: "<%= audio_path('MILEY-VIRUS.mp3') %>"
+			mp3: "<%= audio_path('MILEY-VIRUS') %>"
 		},	
 		{
-			title: "Sir Francis Dragons",
+			title: "Sir Drake",
 			mp3: "<%= audio_path('Sir-Francis-Drake') %>"
 		},					
 		{
 			title: "Game of Drones",
-			mp3: "<%= audio_path('Game-of-Drones.mp3') %>"
+			mp3: "<%= audio_path('Game-of-Drones') %>"
 		},
 		{
 			title: "My Morning 8ball Jacket",
@@ -34,7 +38,7 @@ $(document).ready(function(){
 		},
 		{
 			title: "Welcome to the Jingle",
-			mp3: "<%= audio_path('WELCOME-TO-THE-JINGLE.mp3') %>"
+			mp3: "<%= audio_path('WELCOME-TO-THE-JINGLE') %>"
 		},		
 		{
 			title: "Imagine all the Dragons",

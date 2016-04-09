@@ -226,14 +226,13 @@ $(document).on("page:change", function() {
 	//});
 
 
-$( ".xtrig" ).hover(
-  function() {
-    //$(".paintingInfo").fadeIn( 500 );
-    $( this ).find('.paintingInfo').fadeIn( 500 );
-  }, function() {
-    $( this ).find('.paintingInfo').fadeOut( 250 );
-  }
-);
+//$( ".xtrig" ).hover(
+//  function() {
+//    $( this ).find('.paintingInfo').fadeIn( 500 );
+//  }, function() {
+//    $( this ).find('.paintingInfo').fadeOut( 250 );
+//  }
+//);
 
 	//$slider.on('mouseenter', stopSlider).on('mouseleave', startSlider);
 
