@@ -221,6 +221,12 @@ $(document).on("page:change", function() {
 		});		
 	});	
 
+	if ($('#homeBox').length){
+		$('#slideShow').hide();
+		$('#slideShowStop').show();
+		startSlider();
+    }
+
 	//$(".xtrig").hover(function() {
   	//	$(".paintingInfo").fadeIn( 500 );
 	//});
@@ -235,6 +241,8 @@ $(document).on("page:change", function() {
 //);
 
 	//$slider.on('mouseenter', stopSlider).on('mouseleave', startSlider);
+
+
 
 	//startSlider();
 

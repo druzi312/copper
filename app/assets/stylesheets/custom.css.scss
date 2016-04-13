@@ -521,7 +521,8 @@ input {
     right: 173px;
     text-align: center;
     width: 60px;
-}
+    z-index: 12;
+    }
 #about {
     background-color: #777777;
     display: none;
