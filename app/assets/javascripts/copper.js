@@ -208,7 +208,7 @@ $(document).on("page:change", function() {
 		var hrefPainting;
 		hrefPainting = this.href;
 		// http://localhost:3000/paintings# gets cut
-		hrefPainting = hrefPainting.slice(32);
+		hrefPainting = hrefPainting.split('#')[1];
 
 
 
