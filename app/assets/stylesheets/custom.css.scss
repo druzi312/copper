@@ -632,7 +632,7 @@ ul#contacts li {
 
 
 #art-index #close {
-    background-image: url("/assets/arrow/sprite.png");
+    background: image-url("/assets/arrow/sprite.png");
     background-position: 10px 0;
     background-repeat: no-repeat;
     color: #000;
@@ -655,7 +655,7 @@ ul#contacts li {
     text-decoration: none;
 }
 #slider-close {
-    background-image: url("/assets/arrow/sprite_down.png");
+    background: image-url("/assets/arrow/sprite_down.png");
     background-position: 14px -39px;
     background-repeat: no-repeat;
     color: #000;
@@ -686,7 +686,7 @@ ul#contacts li {
 }
 
 #slideFront {
-    background-image: url("/assets/arrow/right.png");
+    background: image-url("/assets/arrow/right.png");
     background-position: right center;
     background-repeat: no-repeat;
     float: right;
@@ -694,7 +694,7 @@ ul#contacts li {
 }
 
 #slideBack {
-    background-image: url("/assets/arrow/left.png");
+    background: image-url("/assets/arrow/left.png");
     background-position: left center;
     background-repeat: no-repeat;
     float: right;
@@ -704,7 +704,7 @@ ul#contacts li {
 #slideShow, #slideShowStop {top: 34px; z-index: 2;}
 
 #slideShow {
-    background-image: url("/assets/arrow/sprite_play.png");
+    background: image-url("/assets/arrow/sprite_play.png");
     background-position: left -49px;
     background-repeat: no-repeat;
     height: 44px;
@@ -717,7 +717,7 @@ ul#contacts li {
 }
 
 #slideShowStop {
-    background-image: url("/assets/arrow/sprite_pause.png");
+    background: image-url("/assets/arrow/sprite_pause.png");
     background-position: left -49px;
     background-repeat: no-repeat;
     height: 44px;
@@ -819,7 +819,7 @@ label {
     width: 800px;
 }
 .close2 {
-    background-image: url("/assets/closer.png");
+    background: image-url("/assets/closer.png");
     color: #000;
     cursor: pointer;
     float: right;
