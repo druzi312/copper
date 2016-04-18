@@ -17,7 +17,8 @@ class ContactsController < ApplicationController
     	@contact = Contact.new(contact_params)
     	@contact.save
 
-    	redirect_to contact_path(@contact)
+    	redirect_to action: "new"
+    	flash[:success] = "Your contact has been recieved."
 
 	end
 end

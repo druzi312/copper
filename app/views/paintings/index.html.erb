@@ -67,9 +67,25 @@
 
     <hr style="clear: both;"/>
 
+
+
+
+
+<% if logged_in? %>
     <p>
     <%= link_to "Create a New Painting", new_painting_path, class: "new_painting" %>
-    </p>
+    </p>                   
+<% else %>
+
+<% end %>
+
+
+
+
+
+
+
+
 
 </div>
 
