@@ -9,6 +9,11 @@
     <%= f.text_field :title %>
   </p>
 
+  <p>
+    <%= f.label :painting_path %><br />
+    <%= f.text_field :painting_path %>
+  </p>
+
   <% if @painting.image.exists? %>
 
       <%= image_tag @painting.image.url(:thumb) %><br/>

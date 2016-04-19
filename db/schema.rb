@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160401170704) do
+ActiveRecord::Schema.define(version: 20160419193502) do
 
   create_table "contacts", force: :cascade do |t|
     t.string   "name"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20160401170704) do
     t.integer  "ordering"
     t.string   "painting_type"
     t.boolean  "painting_featured"
+    t.string   "painting_path"
   end
 
   create_table "taggings", force: :cascade do |t|

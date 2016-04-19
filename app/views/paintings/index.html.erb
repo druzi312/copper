@@ -18,7 +18,7 @@
           <li>        
             <a id="xtrigger" class="xtrig" rel="coda-slider-1" href="#<%= @number += 1 %>">
 
-              <img src="<%= painting.image.url(:small) %>">
+              <%= image_tag("art/#{painting.painting_path}") %>
 
               <div id="" class="paintingInfo">
 
@@ -47,7 +47,7 @@
           <li>        
             <a id="xtrigger" class="xtrig" rel="coda-slider-1" href="#<%= @number += 1 %>">
 
-              <img src="<%= painting.image.url(:small) %>">
+              <%= image_tag("art/#{painting.painting_path}") %>
 
               <div id="" class="paintingInfo">
 
@@ -123,7 +123,7 @@
       <% @paintingsFull.each do |painting| %>
           <li class="slide">
             <div class="panel-wrapper">            
-              <img src="<%= painting.image.url(:large) %>">
+              <%= image_tag("art/#{painting.painting_path}") %>
               <h2 id="title"><strong><%= painting.title %></strong> <%= painting.body %></h2>
            
             </div>
@@ -135,7 +135,7 @@
       
           <li class="slide">
             <div class="panel-wrapper">            
-              <img src="<%= painting.image.url(:large) %>">
+              <%= image_tag("art/#{painting.painting_path}") %>
               <h2 id="title"><strong><%= painting.title %></strong> <%= painting.body %></h2>   
             </div>
           </li>
