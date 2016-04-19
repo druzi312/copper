@@ -95,6 +95,7 @@ p {
 a, a:focus { 
     outline: none; 
     outline:0;
+    color: #000;
 }
 
 /* cop styles */
@@ -415,7 +416,7 @@ input {
   li {
     overflow: auto;
     margin: 10px;
-    border-bottom: 1px solid $gray-lighter;
+    
     float: left;
     position: relative;
   }
