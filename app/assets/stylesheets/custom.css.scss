@@ -409,6 +409,39 @@ input {
     overflow: hidden;
   }
 }
+.paintingsHome {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    margin: 10px;
+    border-bottom: 1px solid $gray-lighter;
+    float: left;
+    position: relative;
+  }
+}
+#xtrigger {
+  display: block;
+  width: 150px; 
+  height: 150px;
+  position: relative;
+}
+.paintingInfo {
+    background-color: #000;
+    bottom: 0;
+    display: none;
+    position: absolute;
+    width: 150px;
+    color: #fff;
+}
+.paintingInfo h3{
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+} 
+#xtrigger img {
+  max-height: 150px;
+}
 .homeBoxImg img {padding-top: 22px;}
 
 
@@ -449,39 +482,7 @@ input {
 
 
 
-.paintingsHome {
-  list-style: none;
-  margin: 0;
-  li {
-    overflow: auto;
-    margin: 10px;
-    border-bottom: 1px solid $gray-lighter;
-    float: left;
-    position: relative;
-  }
-}
-#xtrigger {
-  display: block;
-  width: 150px; 
-  height: 150px;
-  position: relative;
-}
-.paintingInfo {
-    background-color: #000;
-    bottom: 0;
-    display: none;
-    position: absolute;
-    width: 150px;
-    color: #fff;
-}
-.paintingInfo h3{
-  font-size: 12px;
-  margin: 0;
-  padding: 0;
-} 
-#xtrigger img {
-  max-width: 150px;
-}
+
 
 
 /* Drop Down Area */
@@ -501,7 +502,7 @@ input {
   padding-top: 50px;
 }  
 #pulldown p {
-    font-size: 12px;
+    font-size: 13px;
     padding-bottom: 15px;
 }
 #pulldown a {

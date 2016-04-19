@@ -113,7 +113,7 @@ $(document).on("page:change", function() {
     var width = 1170;
     
     //pause slides
-    var pause = 3000;
+    var pause = 5000;
     //animation speed
     var animationSpeed = 1000;
     var currentSlide = 1;
