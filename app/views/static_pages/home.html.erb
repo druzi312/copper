@@ -18,7 +18,7 @@
       <% @paintings.each do |painting| %>
           <li class="slide">
             <div class="panel-wrapper">            
-              <img src="<%= painting.image.url(:large) %>">
+              <%= image_tag("art/#{painting.painting_path}") %>
               <h2 id="title"><strong><%= painting.title %></strong> <%= painting.body %></h2>
            
             </div>
@@ -29,7 +29,7 @@
       <% @paintings2.each do |painting| %>
           <li class="slide">
             <div class="panel-wrapper">            
-              <img src="<%= painting.image.url(:large) %>">
+              <%= image_tag("art/#{painting.painting_path}") %>
               <h2 id="title"><strong><%= painting.title %></strong> <%= painting.body %></h2>
            
             </div>
@@ -51,7 +51,7 @@
     <div id="homeBoxes" class="row">
         <div class="col-md-8">
 
-          <%= image_tag("skate.jpg") %>
+          <%= image_tag("skate.jpg")%>
           <h2>Roll With Me <br/>
             by Verbal Kent and !llmind <br/>
             2016
@@ -60,7 +60,7 @@
         </div>
 
         <div class="col-md-4">
-          <a href="https://player.vimeo.com/video/53137843" target="_blank">
+          <a href="https://player.vimeo.com/video/53137843" target="_blank" class="homeBoxImg">
             <%= image_tag("roll.jpg") %>
           </a>
         </div>
