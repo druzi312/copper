@@ -1,11 +1,11 @@
 <footer class="footer">
 
-    &copy; 2016 <a href="#">HomelessCop.com</a> | by <a href="#">Druzi on Rails</a>
+<p style="float: left;">
+    &copy; 2016 <a href="http://homelesscop.com/#">HomelessCop.com</a> | by <a href="https://historytrees.com/">Druzi on Rails</a>
+</p>
  
   <nav>
-    <ul>
-      <li><%= image_tag("eye.png") %></li>
-      
+    <ul>      
         <% if logged_in? %>
           
           <li class="dropdown">
@@ -27,7 +27,7 @@
         <% else %>
           <li><%= link_to "Log in", login_path %></li>
         <% end %>
-
+        <li><%= image_tag("eye.png") %></li>
 
     </ul>
   </nav>
