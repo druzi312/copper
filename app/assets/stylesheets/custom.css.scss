@@ -616,8 +616,9 @@ body.order-body form.edit_painting input#painting_ordering {
 
 #slider {
     height: 555px;
+    margin: 0 auto;
     overflow: hidden;
-    width: 1170px;
+    width: 700px;
 }
 #slider .slides {
   margin: 0;
@@ -629,7 +630,7 @@ body.order-body form.edit_painting input#painting_ordering {
 #slider .slide {
   float: left;
   list-style-type: none;
-  width: 1170px;
+  width: 700px;
   height: 500px;
   text-align: center;
 }

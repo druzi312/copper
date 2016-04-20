@@ -110,7 +110,7 @@ $(document).on("page:change", function() {
 	//count paintings
 	var slideCount = $(".slides > .slide").length;
 	//width of all paintings
-    var width = 1170;
+    var width = 700;
     
     //pause slides
     var pause = 5000;
