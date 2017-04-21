@@ -1,6 +1,6 @@
 <h1><%= @painting.title %></h1>
 
-<p><%= image_tag @painting.image.url(:large) %></p>
+<p><%= cl_image_tag(@painting.cloudinary_asset_id) %></p>
 <p><%= @painting.body %></p>
 <p>
   Tags:
