@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160419193502) do
+ActiveRecord::Schema.define(version: 20170419190005) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "contacts", force: :cascade do |t|
     t.string   "name"
@@ -34,6 +37,7 @@ ActiveRecord::Schema.define(version: 20160419193502) do
     t.string   "painting_type"
     t.boolean  "painting_featured"
     t.string   "painting_path"
+    t.string   "cloudinary_asset_id"
   end
 
   create_table "taggings", force: :cascade do |t|
@@ -43,8 +47,8 @@ ActiveRecord::Schema.define(version: 20160419193502) do
     t.datetime "updated_at",  null: false
   end
 
-  add_index "taggings", ["painting_id"], name: "index_taggings_on_painting_id"
-  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id"
+  add_index "taggings", ["painting_id"], name: "index_taggings_on_painting_id", using: :btree
+  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
 
   create_table "tags", force: :cascade do |t|
     t.string   "name"
@@ -65,6 +69,8 @@ ActiveRecord::Schema.define(version: 20160419193502) do
     t.datetime "activated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
+  add_foreign_key "taggings", "paintings"
+  add_foreign_key "taggings", "tags"
 end

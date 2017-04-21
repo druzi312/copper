@@ -1,4 +1,6 @@
 class Painting < ActiveRecord::Base
+	# Upload file for cloudinary
+	attr_accessor :upload
 
 	has_attached_file :image, styles: { 
 		small: "150x150", 
@@ -10,6 +12,20 @@ class Painting < ActiveRecord::Base
 
 	has_many :taggings
 	has_many :tags, through: :taggings
+
+	validates :title,    presence: true
+	validates :ordering, presence: true
+	validates :upload,   presence: true, if: :new_record?
+
+	before_create do
+		begin
+			resp = Cloudinary::Uploader.upload(self.upload)
+			self.cloudinary_asset_id = resp["public_id"]
+		rescue Exception => err
+			errors.add(:upload, err.message)
+			false
+		end
+	end
 
 	scope :non_painting_featured, -> { where(painting_featured: false) }
 

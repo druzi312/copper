@@ -5,11 +5,16 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.5.1'
 # Use sqlite3 as the database for Active Record
 
-gem 'bootstrap-sass',       '3.2.0.0'
-gem 'bcrypt',               '3.1.7'
-gem 'faker',                '1.4.2'
+gem 'bootstrap-sass',          '3.2.0.0'
+gem 'bcrypt',                  '3.1.7'
+gem 'faker',                   '1.4.2'
 gem 'will_paginate',           '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
+gem 'cloudinary',              '1.7.0'
+gem 'pg',                      '0.17.1'
+gem 'dotenv'
+gem 'thin'
+gem 'foreman'
 
 gem "paperclip"
 
@@ -35,6 +40,5 @@ group :test do
 end
 
 group :production do
-  gem 'pg',             '0.17.1'
   gem 'rails_12factor', '0.0.2'
 end

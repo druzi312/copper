@@ -18,7 +18,8 @@
           <li>        
             <a id="xtrigger" class="xtrig" rel="coda-slider-1" href="#<%= @number += 1 %>">
 
-              <%= image_tag("art/#{painting.painting_path}") %>
+              <%= cl_image_tag(painting.cloudinary_asset_id, quality: 90, width: 150, height: 150, crop: :fill) %>
+
 
               <div id="" class="paintingInfo">
 
@@ -47,7 +48,7 @@
           <li>        
             <a id="xtrigger" class="xtrig" rel="coda-slider-1" href="#<%= @number += 1 %>">
 
-              <%= image_tag("art/#{painting.painting_path}") %>
+              <%= cl_image_tag(painting.cloudinary_asset_id, quality: 90, width: 150, height: 150, crop: :fill) %>
 
               <div id="" class="paintingInfo">
 
@@ -123,7 +124,7 @@
       <% @paintingsFull.each do |painting| %>
           <li class="slide">
             <div class="panel-wrapper">            
-              <%= image_tag("art/#{painting.painting_path}") %>
+              <%= cl_image_tag(painting.cloudinary_asset_id) %>
               <h2 id="title"><strong><%= painting.title %></strong> <%= painting.body %></h2>
            
             </div>
@@ -135,7 +136,7 @@
       
           <li class="slide">
             <div class="panel-wrapper">            
-              <%= image_tag("art/#{painting.painting_path}") %>
+              <%= cl_image_tag(painting.cloudinary_asset_id) %>
               <h2 id="title"><strong><%= painting.title %></strong> <%= painting.body %></h2>   
             </div>
           </li>

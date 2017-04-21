@@ -9,19 +9,14 @@
     <%= f.text_field :title %>
   </p>
 
-  <p>
-    <%= f.label :painting_path %><br />
-    <%= f.text_field :painting_path %>
-  </p>
-
   <% if @painting.image.exists? %>
 
       <%= image_tag @painting.image.url(:thumb) %><br/>
   <% end %>
 
   <p>
-    <%= f.label :image, "Attach an Image" %><br />
-    <%= f.file_field :image %>
+    <%= f.label :upload, "Attach an Image" %><br />
+    <%= f.file_field :upload %>
   </p>
 
 <p>

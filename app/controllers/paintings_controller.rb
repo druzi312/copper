@@ -5,13 +5,11 @@ class PaintingsController < ApplicationController
 	before_action :admin_user,     only: [ :edit, :update, :destroy, :new ]
 
 	def index
+    @paintings  = Painting.all.where(painting_type: "Painting").sort_by &:ordering 
+    @paintings2 = Painting.all.where(painting_type: "Commissions").sort_by &:ordering 
 
-    	@paintings = Painting.all.where(painting_type: "Painting").sort_by &:ordering 
-    	@paintings2 = Painting.all.where(painting_type: "Commissions").sort_by &:ordering 
-
-    	@paintingsFull = Painting.all.where(painting_type: "Painting").sort_by &:ordering 
-    	@paintingsFullNon = Painting.all.where(painting_type: "Commissions").sort_by &:ordering 
-
+    @paintingsFull    = Painting.all.where(painting_type: "Painting").sort_by &:ordering 
+    @paintingsFullNon = Painting.all.where(painting_type: "Commissions").sort_by &:ordering 
 	end
   	
 	def show
@@ -24,9 +22,13 @@ class PaintingsController < ApplicationController
 
 	def create
  	  @painting = Painting.new(painting_params)
-	  @painting.save
-	  redirect_to painting_path(@painting)
-	  flash[:success] = "Painting Added"
+	  if @painting.save
+	    redirect_to painting_path(@painting)
+	    flash[:success] = "Painting Added"
+    else
+      flash[:danger] = "Cant save the painting"
+      render :new
+    end
 	end
 
 	def destroy
