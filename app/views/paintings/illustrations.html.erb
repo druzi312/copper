@@ -92,7 +92,7 @@
       <% @illustrations.each do |ill| %>
           <li class="slide">
             <div class="panel-wrapper">            
-              <%= cl_image_tag(ill.cloudinary_asset_id) %>
+              <%= cl_image_tag(ill.cloudinary_asset_id, width: 500, height: 500, crop: :fit) %>
               <h2 id="title"><strong><%= ill.title %></strong> <%= ill.body %></h2>
            
             </div>
