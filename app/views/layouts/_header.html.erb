@@ -7,8 +7,9 @@
     <nav>
       <ul class="nav navbar-nav">
         <li><%= link_to "Paintings", paintings_path, id: "Paintings-nav" %></li>
+        <li><%= link_to "Illustrations", illustrations_path, id: "Illustrations-nav" %></li>
         <li><%= link_to "Videos", video_path, id: "Videos-nav" %></li>
-        <li><%= link_to "Music", music_path, id: "Music-nav" %></li>
+        <!-- <li><%= link_to "Music", music_path, id: "Music-nav" %></li> -->
         <li><a id="aboutpull">About</a></li>
         <li id="Contact-nav"><%= link_to "Contact", :controller => :contacts, :action => :new %></li>  
         <li><a href="http://homelesscop.bigcartel.com/" alt="Homeless Cop Big Cartel" target="_blank">Store</a></li>

@@ -1,0 +1,110 @@
+<% provide(:title, 'Illustrations') %>
+
+<script type="text/javascript">
+  $( "#Illustrations-nav" ).css( "font-weight", "bold" );
+</script>
+
+  <div id="art-index" class="container">
+    
+      <a id="close">Gallery</a>
+    
+
+    <h1>Illustrations</h1>
+
+    <ul class="paintingsListing">
+      <% @illustrations.each_with_index do |painting, i| %>
+      
+          <li>        
+            <a id="xtrigger" class="xtrig" rel="coda-slider-1" href="#<%= i += 1 %>">
+
+              <%= cl_image_tag(painting.cloudinary_asset_id, quality: 90, width: 150, height: 150, crop: :fill) %>
+
+
+              <div id="" class="paintingInfo">
+
+                <h3><%= painting.title %></h3>
+
+                <i><%= painting.body %></i>
+
+                <span class="cop-order-info"><%= painting.ordering %></span>  
+
+              </div>           
+
+            </a> 
+          </li>
+      
+      <% end %>
+    </ul>
+
+    <hr style="clear: both;"/>
+
+  
+
+<% if logged_in? %>
+    <p>
+    <%= link_to "Create a New Painting", new_painting_path, class: "new_painting" %>
+    </p>                   
+<% else %>
+
+<% end %>
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="wrapper">
+  <div class="container-hc">
+
+    <noscript>
+      <div>
+            <p>Unfortunately your browser does not hava JavaScript capabilities which are required to exploit full functionality of our site. This could be the result of two possible scenarios:</p>
+            <ol>
+                <li>You are using an old web browser, in which case you should upgrade it to a newer version. We recommend the latest version of <a href="http://www.getfirefox.com">Firefox</a>.</li>
+                <li>You have disabled JavaScript in you browser, in which case you will have to enable it to properly use our site. <a href="http://www.google.com/support/bin/answer.py?answer=23852">Learn how to enable JavaScript</a>.</li>
+            </ol>
+        </div>
+    </noscript>
+
+
+
+
+
+
+    <div id="art-gallery">
+      <a href="#" id="slider-close" >Art Index</a> <br />
+
+
+      <a href="#" id="slideShow" style="display :block;">Slideshow</a> 
+      <a href="#" id="slideShowStop" style="display :none;" >Pause Slideshow</a> <br />
+
+      <a href="#" id="slideBack"> < Back </a> 
+      <a href="#" id="slideFront"> Front > </a> 
+
+      <div id="slider" class="hc-slider-wrapper">
+        <ul class="slides">
+
+      <% @illustrations.each do |ill| %>
+          <li class="slide">
+            <div class="panel-wrapper">            
+              <%= cl_image_tag(ill.cloudinary_asset_id) %>
+              <h2 id="title"><strong><%= ill.title %></strong> <%= ill.body %></h2>
+           
+            </div>
+          </li>
+      
+      <% end %>
+ 
+  
+        </ul>
+      </div>  
+
+    </div>
+  </div>
+</div>
+

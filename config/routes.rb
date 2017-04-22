@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get    'paintings/order'   => 'paintings#order'
   resources :paintings
 
+  get    'illustrations' => 'paintings#illustrations'
+
   get    'say-hello'   => 'contacts#new'
   resources :contacts
 

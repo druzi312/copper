@@ -11,6 +11,10 @@ class PaintingsController < ApplicationController
     @paintingsFull    = Painting.all.where(painting_type: "Painting").sort_by &:ordering 
     @paintingsFullNon = Painting.all.where(painting_type: "Commissions").sort_by &:ordering 
 	end
+
+  def illustrations
+    @illustrations = Painting.where(painting_type: "Illustration").order("ordering asc")
+  end
   	
 	def show
 		@painting = Painting.find(params[:id])
@@ -59,6 +63,7 @@ class PaintingsController < ApplicationController
 
     	@paintings = Painting.all.where(painting_type: "Painting").sort_by &:ordering 
     	@paintings2 = Painting.all.where(painting_type: "Commissions").sort_by &:ordering 
+      @illustrations = Painting.where(painting_type: "Illustration").order("ordering asc")
 
     	@paintingsFull = Painting.all.where(painting_featured: true).sort_by &:ordering 
     	@paintingsFullNon = Painting.all.where(painting_featured: false).sort_by &:ordering 
